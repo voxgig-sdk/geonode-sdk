@@ -1,0 +1,267 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Geonode API",
+    "description": "The Geonode API enables ethical data collection for the modern web, allowing developers to utilize scalable proxies and APIs for any target while offering expert support throughout the process. With tools designed for efficient data management and retrieval, this API is ideal for developers looking to integrate data collection seamlessly into their applications.",
+    "version": "1.0.0",
+    "contact": {
+      "url": "https://github.com/l0v3m0n3y/geonode"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://proxylist.geonode.com/api",
+      "description": "Geonode API Server"
+    }
+  ],
+  "paths": {
+    "/proxy-list": {
+      "get": {
+        "summary": "Get Proxy List",
+        "description": "Retrieves a paginated list of available proxy servers from Geonode's proxy network. This endpoint allows you to access scalable proxies for ethical data collection.",
+        "operationId": "getProxyList",
+        "tags": [
+          "Proxies"
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "description": "The page number for pagination",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 1,
+              "minimum": 1
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "The number of proxy servers to return per page",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 100,
+              "minimum": 1,
+              "maximum": 500
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with proxy list",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "description": "Array of proxy server objects",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "ip": {
+                            "type": "string",
+                            "description": "IP address of the proxy server",
+                            "example": "192.168.1.1"
+                          },
+                          "port": {
+                            "type": "string",
+                            "description": "Port number of the proxy server",
+                            "example": "8080"
+                          },
+                          "protocols": {
+                            "type": "array",
+                            "description": "Supported protocols",
+                            "items": {
+                              "type": "string",
+                              "example": "http"
+                            }
+                          },
+                          "country": {
+                            "type": "string",
+                            "description": "Country code where the proxy is located",
+                            "example": "US"
+                          },
+                          "anonymityLevel": {
+                            "type": "string",
+                            "description": "Level of anonymity provided by the proxy",
+                            "example": "elite"
+                          },
+                          "responseTime": {
+                            "type": "integer",
+                            "description": "Average response time in milliseconds",
+                            "example": 150
+                          },
+                          "upTime": {
+                            "type": "number",
+                            "description": "Uptime percentage",
+                            "example": 99.5
+                          },
+                          "lastChecked": {
+                            "type": "string",
+                            "format": "date-time",
+                            "description": "Timestamp of last proxy check"
+                          }
+                        }
+                      }
+                    },
+                    "total": {
+                      "type": "integer",
+                      "description": "Total number of available proxies"
+                    },
+                    "page": {
+                      "type": "integer",
+                      "description": "Current page number"
+                    },
+                    "limit": {
+                      "type": "integer",
+                      "description": "Number of items per page"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - Invalid parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "description": "Error message"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too many requests - Rate limit exceeded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "description": "Error message"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "description": "Error message"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ProxyServer": {
+        "type": "object",
+        "properties": {
+          "ip": {
+            "type": "string",
+            "description": "IP address of the proxy server"
+          },
+          "port": {
+            "type": "string",
+            "description": "Port number of the proxy server"
+          },
+          "protocols": {
+            "type": "array",
+            "description": "Supported protocols",
+            "items": {
+              "type": "string"
+            }
+          },
+          "country": {
+            "type": "string",
+            "description": "Country code where the proxy is located"
+          },
+          "anonymityLevel": {
+            "type": "string",
+            "description": "Level of anonymity provided by the proxy"
+          },
+          "responseTime": {
+            "type": "integer",
+            "description": "Average response time in milliseconds"
+          },
+          "upTime": {
+            "type": "number",
+            "description": "Uptime percentage"
+          },
+          "lastChecked": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Timestamp of last proxy check"
+          }
+        }
+      },
+      "ProxyListResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProxyServer"
+            }
+          },
+          "total": {
+            "type": "integer",
+            "description": "Total number of available proxies"
+          },
+          "page": {
+            "type": "integer",
+            "description": "Current page number"
+          },
+          "limit": {
+            "type": "integer",
+            "description": "Number of items per page"
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Error message"
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Proxies",
+      "description": "Operations related to proxy server management and retrieval"
+    }
+  ],
+  "externalDocs": {
+    "description": "GitHub Repository",
+    "url": "https://github.com/l0v3m0n3y/geonode"
+  }
+}

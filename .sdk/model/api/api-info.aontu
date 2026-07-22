@@ -1,0 +1,25 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      auth: false
+      contact: {
+        url: "https://github.com/l0v3m0n3y/geonode"
+      }
+      description: "The Geonode API enables ethical data collection for the modern web, allowing developers to utilize scalable proxies and APIs for any target while offering expert support throughout the process. With tools designed for efficient data management and retrieval, this API is ideal for developers looking to integrate data collection seamlessly into their applications."
+      servers: [
+        {
+          description: "Geonode API Server"
+          url: "https://proxylist.geonode.com/api"
+        }
+      ]
+      summary: "The Geonode API enables ethical data collection for the modern web, allowing developers to utilize scalable proxies and APIs for any target while offering expert support throughout the process."
+      title: "Geonode API"
+      version: "1.0.0"
+      website: "https://github.com/l0v3m0n3y/geonode"
+    }
+  }
+}
+

@@ -1,0 +1,98 @@
+# Entity: proxy
+
+main: kit: entity: proxy: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "anonymity_level"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "country"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "ip"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "last_checked"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "port"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "protocol"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "response_time"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "up_time"
+      req: false
+      type: "`$NUMBER`"
+    }
+  ]
+
+  name: "proxy"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                example: 100
+                kind: "query"
+                name: "limit"
+                orig: "limit"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+              {
+                example: 1
+                kind: "query"
+                name: "page"
+                orig: "page"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/proxy-list"
+          parts: [
+            "proxy-list"
+          ]
+          select: {
+            exist: [
+              "limit"
+              "page"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}
