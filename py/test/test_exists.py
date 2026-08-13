@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# Geonode SDK exists test
 
 import pytest
 from geonode_sdk import GeonodeSDK

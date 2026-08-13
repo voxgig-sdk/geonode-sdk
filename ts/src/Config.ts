@@ -21,7 +21,7 @@ class Config {
 
 
   main = {
-    name: 'ProjectName',
+    name: 'Geonode',
   }
 
 
@@ -56,7 +56,7 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "anonymity_level",
+          "name": "anonymityLevel",
           "req": false,
           "type": "`$STRING`",
           "index$": 0
@@ -77,7 +77,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "last_checked",
+          "name": "lastChecked",
           "req": false,
           "type": "`$STRING`",
           "index$": 3
@@ -91,21 +91,21 @@ class Config {
         },
         {
           "active": true,
-          "name": "protocol",
+          "name": "protocols",
           "req": false,
           "type": "`$ARRAY`",
           "index$": 5
         },
         {
           "active": true,
-          "name": "response_time",
+          "name": "responseTime",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 6
         },
         {
           "active": true,
-          "name": "up_time",
+          "name": "upTime",
           "req": false,
           "type": "`$NUMBER`",
           "index$": 7
@@ -141,6 +141,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/proxy-list",
               "parts": [
@@ -154,7 +155,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 0
             }

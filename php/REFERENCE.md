@@ -92,14 +92,14 @@ $proxy = $client->Proxy();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `anonymity_level` | `string` | No |  |
+| `anonymityLevel` | `string` | No |  |
 | `country` | `string` | No |  |
 | `ip` | `string` | No |  |
-| `last_checked` | `string` | No |  |
+| `lastChecked` | `string` | No |  |
 | `port` | `string` | No |  |
-| `protocol` | `array` | No |  |
-| `response_time` | `int` | No |  |
-| `up_time` | `float` | No |  |
+| `protocols` | `array` | No |  |
+| `responseTime` | `int` | No |  |
+| `upTime` | `float` | No |  |
 
 ### Operations
 

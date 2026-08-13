@@ -10,7 +10,7 @@
 
 # Proxy entity data model.
 #
-# @!attribute [rw] anonymity_level
+# @!attribute [rw] anonymityLevel
 #   @return [String, nil]
 #
 # @!attribute [rw] country
@@ -19,35 +19,35 @@
 # @!attribute [rw] ip
 #   @return [String, nil]
 #
-# @!attribute [rw] last_checked
+# @!attribute [rw] lastChecked
 #   @return [String, nil]
 #
 # @!attribute [rw] port
 #   @return [String, nil]
 #
-# @!attribute [rw] protocol
+# @!attribute [rw] protocols
 #   @return [Array, nil]
 #
-# @!attribute [rw] response_time
+# @!attribute [rw] responseTime
 #   @return [Integer, nil]
 #
-# @!attribute [rw] up_time
+# @!attribute [rw] upTime
 #   @return [Float, nil]
 Proxy = Struct.new(
-  :anonymity_level,
+  :anonymityLevel,
   :country,
   :ip,
-  :last_checked,
+  :lastChecked,
   :port,
-  :protocol,
-  :response_time,
-  :up_time,
+  :protocols,
+  :responseTime,
+  :upTime,
   keyword_init: true
 )
 
 # Request payload for Proxy#list.
 #
-# @!attribute [rw] anonymity_level
+# @!attribute [rw] anonymityLevel
 #   @return [String, nil]
 #
 # @!attribute [rw] country
@@ -56,29 +56,29 @@ Proxy = Struct.new(
 # @!attribute [rw] ip
 #   @return [String, nil]
 #
-# @!attribute [rw] last_checked
+# @!attribute [rw] lastChecked
 #   @return [String, nil]
 #
 # @!attribute [rw] port
 #   @return [String, nil]
 #
-# @!attribute [rw] protocol
+# @!attribute [rw] protocols
 #   @return [Array, nil]
 #
-# @!attribute [rw] response_time
+# @!attribute [rw] responseTime
 #   @return [Integer, nil]
 #
-# @!attribute [rw] up_time
+# @!attribute [rw] upTime
 #   @return [Float, nil]
 ProxyListMatch = Struct.new(
-  :anonymity_level,
+  :anonymityLevel,
   :country,
   :ip,
-  :last_checked,
+  :lastChecked,
   :port,
-  :protocol,
-  :response_time,
-  :up_time,
+  :protocols,
+  :responseTime,
+  :upTime,
   keyword_init: true
 )
 

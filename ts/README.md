@@ -35,7 +35,9 @@ const client = new GeonodeSDK()
 
 ### 2. List proxy records
 
-`list()` resolves to an array of Proxy objects — iterate it directly:
+`list()` resolves to an array of Proxy ENTITIES — every operation
+resolves to entities, not raw records. Iterate them directly, and call
+`.data()` on one for the record it holds:
 
 ```ts
 const proxys = await client.Proxy().list()
@@ -120,7 +122,8 @@ Create a mock client for unit testing — no server required:
 const client = GeonodeSDK.test()
 
 const proxy = await client.Proxy().list()
-// proxy is a bare entity populated with mock response data
+// proxy is the entity, populated with mock response data
+// — call proxy.data() for the record itself
 console.log(proxy)
 ```
 
@@ -284,14 +287,14 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `anonymity_level` |  |
+| `anonymityLevel` |  |
 | `country` |  |
 | `ip` |  |
-| `last_checked` |  |
+| `lastChecked` |  |
 | `port` |  |
-| `protocol` |  |
-| `response_time` |  |
-| `up_time` |  |
+| `protocols` |  |
+| `responseTime` |  |
+| `upTime` |  |
 
 Operations: list.
 
@@ -316,14 +319,14 @@ Create an instance: `const proxy = client.Proxy()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `anonymity_level` | `string` |  |
+| `anonymityLevel` | `string` |  |
 | `country` | `string` |  |
 | `ip` | `string` |  |
-| `last_checked` | `string` |  |
+| `lastChecked` | `string` |  |
 | `port` | `string` |  |
-| `protocol` | `any[]` |  |
-| `response_time` | `number` |  |
-| `up_time` | `number` |  |
+| `protocols` | `any[]` |  |
+| `responseTime` | `number` |  |
+| `upTime` | `number` |  |
 
 #### Example: List
 

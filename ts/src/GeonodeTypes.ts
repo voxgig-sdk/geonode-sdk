@@ -6,24 +6,24 @@
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 
 export interface Proxy {
-  anonymity_level?: string
+  anonymityLevel?: string
   country?: string
   ip?: string
-  last_checked?: string
+  lastChecked?: string
   port?: string
-  protocol?: any[]
-  response_time?: number
-  up_time?: number
+  protocols?: any[]
+  responseTime?: number
+  upTime?: number
 }
 
 export interface ProxyListMatch {
-  anonymity_level?: string
+  anonymityLevel?: string
   country?: string
   ip?: string
-  last_checked?: string
+  lastChecked?: string
   port?: string
-  protocol?: any[]
-  response_time?: number
-  up_time?: number
+  protocols?: any[]
+  responseTime?: number
+  upTime?: number
 }
 

@@ -15,26 +15,26 @@ declare(strict_types=1);
 /** Proxy entity data model. */
 class Proxy
 {
-    public ?string $anonymity_level = null;
+    public ?string $anonymityLevel = null;
     public ?string $country = null;
     public ?string $ip = null;
-    public ?string $last_checked = null;
+    public ?string $lastChecked = null;
     public ?string $port = null;
-    public ?array $protocol = null;
-    public ?int $response_time = null;
-    public ?float $up_time = null;
+    public ?array $protocols = null;
+    public ?int $responseTime = null;
+    public ?float $upTime = null;
 }
 
 /** Request payload for Proxy#list. */
 class ProxyListMatch
 {
-    public ?string $anonymity_level = null;
+    public ?string $anonymityLevel = null;
     public ?string $country = null;
     public ?string $ip = null;
-    public ?string $last_checked = null;
+    public ?string $lastChecked = null;
     public ?string $port = null;
-    public ?array $protocol = null;
-    public ?int $response_time = null;
-    public ?float $up_time = null;
+    public ?array $protocols = null;
+    public ?int $responseTime = null;
+    public ?float $upTime = null;
 }
 

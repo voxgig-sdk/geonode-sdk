@@ -26,7 +26,7 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"active": true,
-						"name": "anonymity_level",
+						"name": "anonymityLevel",
 						"req": false,
 						"type": "`$STRING`",
 						"index$": 0,
@@ -47,7 +47,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "last_checked",
+						"name": "lastChecked",
 						"req": false,
 						"type": "`$STRING`",
 						"index$": 3,
@@ -61,21 +61,21 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "protocol",
+						"name": "protocols",
 						"req": false,
 						"type": "`$ARRAY`",
 						"index$": 5,
 					},
 					map[string]any{
 						"active": true,
-						"name": "response_time",
+						"name": "responseTime",
 						"req": false,
 						"type": "`$INTEGER`",
 						"index$": 6,
 					},
 					map[string]any{
 						"active": true,
-						"name": "up_time",
+						"name": "upTime",
 						"req": false,
 						"type": "`$NUMBER`",
 						"index$": 7,
@@ -111,6 +111,7 @@ func MakeConfig() map[string]any {
 										},
 									},
 								},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/proxy-list",
 								"parts": []any{
@@ -124,12 +125,11 @@ func MakeConfig() map[string]any {
 								},
 								"transform": map[string]any{
 									"req": "`reqdata`",
-									"res": "`body`",
+									"res": "`body.data`",
 								},
 								"index$": 0,
 							},
 						},
-						"key$": "list",
 					},
 				},
 				"relations": map[string]any{

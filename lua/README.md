@@ -43,7 +43,7 @@ local proxys, err = client:Proxy():list()
 if err then error(err) end
 
 for _, item in ipairs(proxys) do
-  print(item["anonymity_level"])
+  print(item["anonymityLevel"])
 end
 ```
 
@@ -218,9 +218,9 @@ data **directly** — there is no wrapper:
 
 Check `err` first (it is non-`nil` on failure), then use `value`:
 
-    local proxy, err = client:Proxy():load()
+    local proxy, err = client:Proxy():list()
     if err then error(err) end
-    -- proxy is the loaded record
+    -- proxy is the record list
 
 Only `direct()` returns a response envelope — a `table` with `ok`,
 `status`, `headers`, and `data` keys.
@@ -231,14 +231,14 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `anonymity_level` |  |
+| `anonymityLevel` |  |
 | `country` |  |
 | `ip` |  |
-| `last_checked` |  |
+| `lastChecked` |  |
 | `port` |  |
-| `protocol` |  |
-| `response_time` |  |
-| `up_time` |  |
+| `protocols` |  |
+| `responseTime` |  |
+| `upTime` |  |
 
 Operations: List.
 
@@ -263,14 +263,14 @@ Create an instance: `local proxy = client:Proxy(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `anonymity_level` | `string` |  |
+| `anonymityLevel` | `string` |  |
 | `country` | `string` |  |
 | `ip` | `string` |  |
-| `last_checked` | `string` |  |
+| `lastChecked` | `string` |  |
 | `port` | `string` |  |
-| `protocol` | `table` |  |
-| `response_time` | `number` |  |
-| `up_time` | `number` |  |
+| `protocols` | `table` |  |
+| `responseTime` | `number` |  |
+| `upTime` | `number` |  |
 
 #### Example: List
 

@@ -98,14 +98,14 @@ fmt.Println(proxy.GetName()) // "proxy"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `anonymity_level` | `string` | No |  |
+| `anonymityLevel` | `string` | No |  |
 | `country` | `string` | No |  |
 | `ip` | `string` | No |  |
-| `last_checked` | `string` | No |  |
+| `lastChecked` | `string` | No |  |
 | `port` | `string` | No |  |
-| `protocol` | `[]any` | No |  |
-| `response_time` | `int` | No |  |
-| `up_time` | `float64` | No |  |
+| `protocols` | `[]any` | No |  |
+| `responseTime` | `int` | No |  |
+| `upTime` | `float64` | No |  |
 
 ### Operations
 

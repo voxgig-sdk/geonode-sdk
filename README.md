@@ -38,9 +38,18 @@ network, and no credentials:
 ### TypeScript
 
 ```ts
-const client = GeonodeSDK.test()
+// The offline mock starts EMPTY — seed it with the records the test needs.
+// Shape: { entity: { <entity-name>: { <id>: <record> } } }
+const client = GeonodeSDK.test({
+  entity: {
+    proxy: {
+      test01: { id: 'test01' },
+    },
+  },
+})
 const proxys = await client.Proxy().list()
-// proxys is an array of bare Proxy records populated with mock data
+// proxys is an array of Proxy entities, populated with mock data
+// — call proxys[0].data() for the record itself
 console.log(proxys)
 ```
 
@@ -110,7 +119,7 @@ import { GeonodeSDK } from '@voxgig-sdk/geonode'
 
 const client = new GeonodeSDK()
 
-// List all proxys (returns Proxy[])
+// List all proxys (returns ProxyEntity[] — .data() for the record)
 const proxys = await client.Proxy().list()
 for (const proxy of proxys) {
   console.log(proxy)
@@ -343,6 +352,9 @@ Pass custom features via the `extend` option at construction time.
 
 This SDK is generated from the upstream OpenAPI specification. It is an
 unofficial client and is not affiliated with the API provider.
+
+The OpenAPI spec(s) this SDK was generated from are kept in the
+[`.sdk/def/`](.sdk/def/) folder.
 
 - Upstream API: [https://github.com/l0v3m0n3y/geonode](https://github.com/l0v3m0n3y/geonode)
 

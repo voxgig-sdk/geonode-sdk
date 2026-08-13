@@ -87,14 +87,14 @@ proxy = client.Proxy()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `anonymity_level` | `str` | No |  |
+| `anonymityLevel` | `str` | No |  |
 | `country` | `str` | No |  |
 | `ip` | `str` | No |  |
-| `last_checked` | `str` | No |  |
+| `lastChecked` | `str` | No |  |
 | `port` | `str` | No |  |
-| `protocol` | `list` | No |  |
-| `response_time` | `int` | No |  |
-| `up_time` | `float` | No |  |
+| `protocols` | `list` | No |  |
+| `responseTime` | `int` | No |  |
+| `upTime` | `float` | No |  |
 
 ### Operations
 

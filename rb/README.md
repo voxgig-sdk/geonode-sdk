@@ -37,7 +37,7 @@ begin
   # list returns an Array of Proxy records — iterate directly.
   proxys = client.Proxy.list
   proxys.each do |item|
-    puts "#{item["anonymity_level"]}"
+    puts "#{item["anonymityLevel"]}"
   end
 rescue => err
   warn "list failed: #{err}"
@@ -119,7 +119,8 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = GeonodeSDK.test
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 proxy = client.Proxy.list()
 puts proxy
 ```
@@ -236,14 +237,14 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `anonymity_level` |  |
+| `anonymityLevel` |  |
 | `country` |  |
 | `ip` |  |
-| `last_checked` |  |
+| `lastChecked` |  |
 | `port` |  |
-| `protocol` |  |
-| `response_time` |  |
-| `up_time` |  |
+| `protocols` |  |
+| `responseTime` |  |
+| `upTime` |  |
 
 Operations: List.
 
@@ -268,14 +269,14 @@ Create an instance: `proxy = client.Proxy`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `anonymity_level` | `String` |  |
+| `anonymityLevel` | `String` |  |
 | `country` | `String` |  |
 | `ip` | `String` |  |
-| `last_checked` | `String` |  |
+| `lastChecked` | `String` |  |
 | `port` | `String` |  |
-| `protocol` | `Array` |  |
-| `response_time` | `Integer` |  |
-| `up_time` | `Float` |  |
+| `protocols` | `Array` |  |
+| `responseTime` | `Integer` |  |
+| `upTime` | `Float` |  |
 
 #### Example: List
 

@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import GeonodeControl
-from core.error import GeonodeError
-from core.result import GeonodeResult
-from core.spec import GeonodeSpec
+from geonode_sdk.config import make_config
+from geonode_sdk.features import _make_feature
+from geonode_sdk.core.control import GeonodeControl
+from geonode_sdk.core.error import GeonodeError
+from geonode_sdk.core.result import GeonodeResult
+from geonode_sdk.core.spec import GeonodeSpec
 
 
 # True when this SDK was generated with the named feature.

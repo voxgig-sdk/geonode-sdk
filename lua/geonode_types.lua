@@ -7,24 +7,24 @@
 -- edit by hand.
 
 ---@class Proxy
----@field anonymity_level? string
+---@field anonymityLevel? string
 ---@field country? string
 ---@field ip? string
----@field last_checked? string
+---@field lastChecked? string
 ---@field port? string
----@field protocol? table
----@field response_time? number
----@field up_time? number
+---@field protocols? table
+---@field responseTime? number
+---@field upTime? number
 
 ---@class ProxyListMatch
----@field anonymity_level? string
+---@field anonymityLevel? string
 ---@field country? string
 ---@field ip? string
----@field last_checked? string
+---@field lastChecked? string
 ---@field port? string
----@field protocol? table
----@field response_time? number
----@field up_time? number
+---@field protocols? table
+---@field responseTime? number
+---@field upTime? number
 
 local M = {}
 

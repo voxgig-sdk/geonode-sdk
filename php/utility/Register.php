@@ -23,6 +23,7 @@ require_once __DIR__ . '/MakeUrl.php';
 require_once __DIR__ . '/Param.php';
 require_once __DIR__ . '/PrepareAuth.php';
 require_once __DIR__ . '/PrepareBody.php';
+require_once __DIR__ . '/Graphql.php';
 require_once __DIR__ . '/PrepareHeaders.php';
 require_once __DIR__ . '/PrepareMethod.php';
 require_once __DIR__ . '/PrepareParams.php';
@@ -59,6 +60,8 @@ GeonodeUtility::setRegistrar(function (GeonodeUtility $u): void {
     $u->prepare_params = [GeonodePrepareParams::class, 'call'];
     $u->prepare_path = [GeonodePreparePath::class, 'call'];
     $u->prepare_query = [GeonodePrepareQuery::class, 'call'];
+    $u->graphql_body = [GeonodeGraphql::class, 'body'];
+    $u->graphql_errors = [GeonodeGraphql::class, 'errors'];
     $u->result_basic = [GeonodeResultBasic::class, 'call'];
     $u->result_body = [GeonodeResultBody::class, 'call'];
     $u->result_headers = [GeonodeResultHeaders::class, 'call'];

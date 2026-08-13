@@ -260,14 +260,14 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"anonymity_level"` |  |
+| `"anonymityLevel"` |  |
 | `"country"` |  |
 | `"ip"` |  |
-| `"last_checked"` |  |
+| `"lastChecked"` |  |
 | `"port"` |  |
-| `"protocol"` |  |
-| `"response_time"` |  |
-| `"up_time"` |  |
+| `"protocols"` |  |
+| `"responseTime"` |  |
+| `"upTime"` |  |
 
 Operations: List.
 
@@ -292,14 +292,14 @@ Create an instance: `proxy := client.Proxy(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `anonymity_level` | `string` |  |
+| `anonymityLevel` | `string` |  |
 | `country` | `string` |  |
 | `ip` | `string` |  |
-| `last_checked` | `string` |  |
+| `lastChecked` | `string` |  |
 | `port` | `string` |  |
-| `protocol` | `[]any` |  |
-| `response_time` | `int` |  |
-| `up_time` | `float64` |  |
+| `protocols` | `[]any` |  |
+| `responseTime` | `int` |  |
+| `upTime` | `float64` |  |
 
 #### Example: List
 

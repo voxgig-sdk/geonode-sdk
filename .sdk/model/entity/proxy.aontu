@@ -6,7 +6,7 @@ main: kit: entity: proxy: {
 
   fields: [
     {
-      name: "anonymity_level"
+      name: "anonymityLevel"
       req: false
       type: "`$STRING`"
     }
@@ -21,7 +21,7 @@ main: kit: entity: proxy: {
       type: "`$STRING`"
     }
     {
-      name: "last_checked"
+      name: "lastChecked"
       req: false
       type: "`$STRING`"
     }
@@ -31,17 +31,17 @@ main: kit: entity: proxy: {
       type: "`$STRING`"
     }
     {
-      name: "protocol"
+      name: "protocols"
       req: false
       type: "`$ARRAY`"
     }
     {
-      name: "response_time"
+      name: "responseTime"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "up_time"
+      name: "upTime"
       req: false
       type: "`$NUMBER`"
     }
@@ -86,7 +86,7 @@ main: kit: entity: proxy: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.data`"
           }
         }
       ]

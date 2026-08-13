@@ -2,48 +2,48 @@
   "existing": {
     "proxy": {
       "PROXY00": {
-        "anonymity_level": "s50",
+        "anonymityLevel": "s50",
         "country": "s51",
         "ip": "s52",
-        "last_checked": "s53",
+        "lastChecked": "s53",
         "port": "s54",
-        "protocol": [],
-        "response_time": "s56",
-        "up_time": 87
+        "protocols": [],
+        "responseTime": "s56",
+        "upTime": 87
       },
       "PROXY01": {
-        "anonymity_level": "sa0",
+        "anonymityLevel": "sa0",
         "country": "sa1",
         "ip": "sa2",
-        "last_checked": "sa3",
+        "lastChecked": "sa3",
         "port": "sa4",
-        "protocol": [],
-        "response_time": "sa6",
-        "up_time": 167
+        "protocols": [],
+        "responseTime": "sa6",
+        "upTime": 167
       },
       "PROXY02": {
-        "anonymity_level": "sf0",
+        "anonymityLevel": "sf0",
         "country": "sf1",
         "ip": "sf2",
-        "last_checked": "sf3",
+        "lastChecked": "sf3",
         "port": "sf4",
-        "protocol": [],
-        "response_time": "sf6",
-        "up_time": 247
+        "protocols": [],
+        "responseTime": "sf6",
+        "upTime": 247
       }
     }
   },
   "new": {
     "proxy": {
       "proxy_ref01": {
-        "anonymity_level": "s140",
+        "anonymityLevel": "s140",
         "country": "s141",
         "ip": "s142",
-        "last_checked": "s143",
+        "lastChecked": "s143",
         "port": "s144",
-        "protocol": [],
-        "response_time": "s146",
-        "up_time": 327
+        "protocols": [],
+        "responseTime": "s146",
+        "upTime": 327
       }
     }
   }

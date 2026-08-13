@@ -16,11 +16,11 @@
 import pytest
 
 from geonode_sdk import GeonodeSDK
-from core.error import GeonodeError
-from core.result import GeonodeResult
-from core.response import GeonodeResponse
-from core.spec import GeonodeSpec
-from feature.base_feature import GeonodeBaseFeature
+from geonode_sdk.core.error import GeonodeError
+from geonode_sdk.core.result import GeonodeResult
+from geonode_sdk.core.response import GeonodeResponse
+from geonode_sdk.core.spec import GeonodeSpec
+from geonode_sdk.feature.base_feature import GeonodeBaseFeature
 
 
 def _client():
