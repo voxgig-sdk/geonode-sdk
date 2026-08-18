@@ -28,7 +28,7 @@ class GeonodeSDK
     utility = GeonodeUtility.new
     @_utility = utility
 
-    config = GeonodeConfig.make_config
+    config = GeonodeConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,

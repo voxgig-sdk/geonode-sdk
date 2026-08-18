@@ -15,7 +15,7 @@ require_relative "../Geonode_sdk"
 module GeonodeFeatureHarness
   # True when this SDK was generated with the named feature.
   def self.has_feature?(name)
-    f = GeonodeConfig.make_config["feature"]
+    f = GeonodeConfig.shared_config["feature"]
     f.is_a?(Hash) && !f[name].nil?
   end
 

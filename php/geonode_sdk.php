@@ -40,7 +40,7 @@ class GeonodeSDK
         $utility = new GeonodeUtility();
         $this->_utility = $utility;
 
-        $config = GeonodeConfig::make_config();
+        $config = GeonodeConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,
