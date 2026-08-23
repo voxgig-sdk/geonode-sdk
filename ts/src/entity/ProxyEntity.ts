@@ -15,12 +15,12 @@ import type {
 } from '../types'
 
 import type {
-  Proxy,
+  ProxyType,
   ProxyListMatch,
 } from '../GeonodeTypes'
 
 // TODO: needs Entity superclass
-class ProxyEntity extends GeonodeEntityBase<Proxy> {
+class ProxyEntity extends GeonodeEntityBase<ProxyType> {
 
   constructor(client: GeonodeSDK, entopts: any) {
     super(client, entopts)

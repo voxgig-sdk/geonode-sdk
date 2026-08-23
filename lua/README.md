@@ -231,14 +231,14 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `anonymityLevel` |  |
-| `country` |  |
-| `ip` |  |
-| `lastChecked` |  |
-| `port` |  |
-| `protocols` |  |
-| `responseTime` |  |
-| `upTime` |  |
+| `anonymityLevel` | Level of anonymity provided by the proxy |
+| `country` | Country code where the proxy is located |
+| `ip` | IP address of the proxy server |
+| `lastChecked` | Timestamp of last proxy check |
+| `port` | Port number of the proxy server |
+| `protocols` | Supported protocols |
+| `responseTime` | Average response time in milliseconds |
+| `upTime` | Uptime percentage |
 
 Operations: List.
 
@@ -263,14 +263,14 @@ Create an instance: `local proxy = client:Proxy(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `anonymityLevel` | `string` |  |
-| `country` | `string` |  |
-| `ip` | `string` |  |
-| `lastChecked` | `string` |  |
-| `port` | `string` |  |
-| `protocols` | `table` |  |
-| `responseTime` | `number` |  |
-| `upTime` | `number` |  |
+| `anonymityLevel` | `string` | Level of anonymity provided by the proxy |
+| `country` | `string` | Country code where the proxy is located |
+| `ip` | `string` | IP address of the proxy server |
+| `lastChecked` | `string` | Timestamp of last proxy check |
+| `port` | `string` | Port number of the proxy server |
+| `protocols` | `table` | Supported protocols |
+| `responseTime` | `number` | Average response time in milliseconds |
+| `upTime` | `number` | Uptime percentage |
 
 #### Example: List
 

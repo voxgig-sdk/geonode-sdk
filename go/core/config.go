@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "Geonode",
+			"slug": "geonode",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -33,34 +36,42 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "anonymityLevel",
+						"short": "Level of anonymity provided by the proxy",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "country",
+						"short": "Country code where the proxy is located",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "ip",
+						"short": "IP address of the proxy server",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "lastChecked",
+						"short": "Timestamp of last proxy check",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "port",
+						"short": "Port number of the proxy server",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "protocols",
+						"short": "Supported protocols",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "responseTime",
+						"short": "Average response time in milliseconds",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "upTime",
+						"short": "Uptime percentage",
 						"type": "`$NUMBER`",
 					},
 				},

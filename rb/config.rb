@@ -19,6 +19,9 @@ module GeonodeConfig
     {
       "main" => {
         "name" => "Geonode",
+        "slug" => "geonode",
+        "version" => "0.0.1",
+        "target" => "rb",
       },
       "feature" => {
         "test" => {
@@ -41,34 +44,42 @@ module GeonodeConfig
           "fields" => [
             {
               "name" => "anonymityLevel",
+              "short" => "Level of anonymity provided by the proxy",
               "type" => "`$STRING`",
             },
             {
               "name" => "country",
+              "short" => "Country code where the proxy is located",
               "type" => "`$STRING`",
             },
             {
               "name" => "ip",
+              "short" => "IP address of the proxy server",
               "type" => "`$STRING`",
             },
             {
               "name" => "lastChecked",
+              "short" => "Timestamp of last proxy check",
               "type" => "`$STRING`",
             },
             {
               "name" => "port",
+              "short" => "Port number of the proxy server",
               "type" => "`$STRING`",
             },
             {
               "name" => "protocols",
+              "short" => "Supported protocols",
               "type" => "`$ARRAY`",
             },
             {
               "name" => "responseTime",
+              "short" => "Average response time in milliseconds",
               "type" => "`$INTEGER`",
             },
             {
               "name" => "upTime",
+              "short" => "Uptime percentage",
               "type" => "`$NUMBER`",
             },
           ],

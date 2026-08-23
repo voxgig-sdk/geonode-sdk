@@ -90,14 +90,14 @@ local proxy = client:Proxy(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `anonymityLevel` | `string` | No |  |
-| `country` | `string` | No |  |
-| `ip` | `string` | No |  |
-| `lastChecked` | `string` | No |  |
-| `port` | `string` | No |  |
-| `protocols` | `table` | No |  |
-| `responseTime` | `number` | No |  |
-| `upTime` | `number` | No |  |
+| `anonymityLevel` | `string` | No | Level of anonymity provided by the proxy |
+| `country` | `string` | No | Country code where the proxy is located |
+| `ip` | `string` | No | IP address of the proxy server |
+| `lastChecked` | `string` | No | Timestamp of last proxy check |
+| `port` | `string` | No | Port number of the proxy server |
+| `protocols` | `table` | No | Supported protocols |
+| `responseTime` | `number` | No | Average response time in milliseconds |
+| `upTime` | `number` | No | Uptime percentage |
 
 ### Operations
 

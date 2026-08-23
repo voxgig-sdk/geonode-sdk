@@ -92,14 +92,14 @@ $proxy = $client->Proxy();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `anonymityLevel` | `string` | No |  |
-| `country` | `string` | No |  |
-| `ip` | `string` | No |  |
-| `lastChecked` | `string` | No |  |
-| `port` | `string` | No |  |
-| `protocols` | `array` | No |  |
-| `responseTime` | `int` | No |  |
-| `upTime` | `float` | No |  |
+| `anonymityLevel` | `string` | No | Level of anonymity provided by the proxy |
+| `country` | `string` | No | Country code where the proxy is located |
+| `ip` | `string` | No | IP address of the proxy server |
+| `lastChecked` | `string` | No | Timestamp of last proxy check |
+| `port` | `string` | No | Port number of the proxy server |
+| `protocols` | `array` | No | Supported protocols |
+| `responseTime` | `int` | No | Average response time in milliseconds |
+| `upTime` | `float` | No | Uptime percentage |
 
 ### Operations
 

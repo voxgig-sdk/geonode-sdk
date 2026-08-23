@@ -5,7 +5,7 @@
 // canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 
-export interface Proxy {
+export interface ProxyType {
   anonymityLevel?: string
   country?: string
   ip?: string

@@ -36,48 +36,56 @@
               "active": true,
               "name": "anonymityLevel",
               "req": false,
+              "short": "Level of anonymity provided by the proxy",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "country",
               "req": false,
+              "short": "Country code where the proxy is located",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "ip",
               "req": false,
+              "short": "IP address of the proxy server",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "lastChecked",
               "req": false,
+              "short": "Timestamp of last proxy check",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "port",
               "req": false,
+              "short": "Port number of the proxy server",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "protocols",
               "req": false,
+              "short": "Supported protocols",
               "type": "`$ARRAY`"
             },
             {
               "active": true,
               "name": "responseTime",
               "req": false,
+              "short": "Average response time in milliseconds",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "upTime",
               "req": false,
+              "short": "Uptime percentage",
               "type": "`$NUMBER`"
             }
           ],

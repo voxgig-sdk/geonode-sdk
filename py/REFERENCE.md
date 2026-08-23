@@ -87,14 +87,14 @@ proxy = client.Proxy()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `anonymityLevel` | `str` | No |  |
-| `country` | `str` | No |  |
-| `ip` | `str` | No |  |
-| `lastChecked` | `str` | No |  |
-| `port` | `str` | No |  |
-| `protocols` | `list` | No |  |
-| `responseTime` | `int` | No |  |
-| `upTime` | `float` | No |  |
+| `anonymityLevel` | `str` | No | Level of anonymity provided by the proxy |
+| `country` | `str` | No | Country code where the proxy is located |
+| `ip` | `str` | No | IP address of the proxy server |
+| `lastChecked` | `str` | No | Timestamp of last proxy check |
+| `port` | `str` | No | Port number of the proxy server |
+| `protocols` | `list` | No | Supported protocols |
+| `responseTime` | `int` | No | Average response time in milliseconds |
+| `upTime` | `float` | No | Uptime percentage |
 
 ### Operations
 

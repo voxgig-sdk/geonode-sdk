@@ -237,14 +237,14 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `anonymityLevel` |  |
-| `country` |  |
-| `ip` |  |
-| `lastChecked` |  |
-| `port` |  |
-| `protocols` |  |
-| `responseTime` |  |
-| `upTime` |  |
+| `anonymityLevel` | Level of anonymity provided by the proxy |
+| `country` | Country code where the proxy is located |
+| `ip` | IP address of the proxy server |
+| `lastChecked` | Timestamp of last proxy check |
+| `port` | Port number of the proxy server |
+| `protocols` | Supported protocols |
+| `responseTime` | Average response time in milliseconds |
+| `upTime` | Uptime percentage |
 
 Operations: List.
 
@@ -269,14 +269,14 @@ Create an instance: `proxy = client.Proxy`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `anonymityLevel` | `String` |  |
-| `country` | `String` |  |
-| `ip` | `String` |  |
-| `lastChecked` | `String` |  |
-| `port` | `String` |  |
-| `protocols` | `Array` |  |
-| `responseTime` | `Integer` |  |
-| `upTime` | `Float` |  |
+| `anonymityLevel` | `String` | Level of anonymity provided by the proxy |
+| `country` | `String` | Country code where the proxy is located |
+| `ip` | `String` | IP address of the proxy server |
+| `lastChecked` | `String` | Timestamp of last proxy check |
+| `port` | `String` | Port number of the proxy server |
+| `protocols` | `Array` | Supported protocols |
+| `responseTime` | `Integer` | Average response time in milliseconds |
+| `upTime` | `Float` | Uptime percentage |
 
 #### Example: List
 

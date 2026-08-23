@@ -9,7 +9,7 @@ The API is exposed as capitalised, semantic **Entities** — e.g.
 instead of raw URL paths and query parameters. This keeps the surface
 predictable and low-friction for both humans and AI agents.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go`, `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb` — see
 > the [top-level README](../README.md).
 
 
@@ -287,14 +287,14 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `anonymityLevel` |  |
-| `country` |  |
-| `ip` |  |
-| `lastChecked` |  |
-| `port` |  |
-| `protocols` |  |
-| `responseTime` |  |
-| `upTime` |  |
+| `anonymityLevel` | Level of anonymity provided by the proxy |
+| `country` | Country code where the proxy is located |
+| `ip` | IP address of the proxy server |
+| `lastChecked` | Timestamp of last proxy check |
+| `port` | Port number of the proxy server |
+| `protocols` | Supported protocols |
+| `responseTime` | Average response time in milliseconds |
+| `upTime` | Uptime percentage |
 
 Operations: list.
 
@@ -319,14 +319,14 @@ Create an instance: `const proxy = client.Proxy()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `anonymityLevel` | `string` |  |
-| `country` | `string` |  |
-| `ip` | `string` |  |
-| `lastChecked` | `string` |  |
-| `port` | `string` |  |
-| `protocols` | `any[]` |  |
-| `responseTime` | `number` |  |
-| `upTime` | `number` |  |
+| `anonymityLevel` | `string` | Level of anonymity provided by the proxy |
+| `country` | `string` | Country code where the proxy is located |
+| `ip` | `string` | IP address of the proxy server |
+| `lastChecked` | `string` | Timestamp of last proxy check |
+| `port` | `string` | Port number of the proxy server |
+| `protocols` | `any[]` | Supported protocols |
+| `responseTime` | `number` | Average response time in milliseconds |
+| `upTime` | `number` | Uptime percentage |
 
 #### Example: List
 

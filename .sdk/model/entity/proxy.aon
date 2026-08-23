@@ -8,41 +8,49 @@ main: kit: entity: proxy: {
     {
       name: "anonymityLevel"
       req: false
+      short: "Level of anonymity provided by the proxy"
       type: "`$STRING`"
     }
     {
       name: "country"
       req: false
+      short: "Country code where the proxy is located"
       type: "`$STRING`"
     }
     {
       name: "ip"
       req: false
+      short: "IP address of the proxy server"
       type: "`$STRING`"
     }
     {
       name: "lastChecked"
       req: false
+      short: "Timestamp of last proxy check"
       type: "`$STRING`"
     }
     {
       name: "port"
       req: false
+      short: "Port number of the proxy server"
       type: "`$STRING`"
     }
     {
       name: "protocols"
       req: false
+      short: "Supported protocols"
       type: "`$ARRAY`"
     }
     {
       name: "responseTime"
       req: false
+      short: "Average response time in milliseconds"
       type: "`$INTEGER`"
     }
     {
       name: "upTime"
       req: false
+      short: "Uptime percentage"
       type: "`$NUMBER`"
     }
   ]

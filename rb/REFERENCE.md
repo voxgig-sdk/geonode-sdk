@@ -93,14 +93,14 @@ proxy = client.Proxy
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `anonymityLevel` | `String` | No |  |
-| `country` | `String` | No |  |
-| `ip` | `String` | No |  |
-| `lastChecked` | `String` | No |  |
-| `port` | `String` | No |  |
-| `protocols` | `Array` | No |  |
-| `responseTime` | `Integer` | No |  |
-| `upTime` | `Float` | No |  |
+| `anonymityLevel` | `String` | No | Level of anonymity provided by the proxy |
+| `country` | `String` | No | Country code where the proxy is located |
+| `ip` | `String` | No | IP address of the proxy server |
+| `lastChecked` | `String` | No | Timestamp of last proxy check |
+| `port` | `String` | No | Port number of the proxy server |
+| `protocols` | `Array` | No | Supported protocols |
+| `responseTime` | `Integer` | No | Average response time in milliseconds |
+| `upTime` | `Float` | No | Uptime percentage |
 
 ### Operations
 

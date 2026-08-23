@@ -19,9 +19,20 @@ class Config {
     return fi
   }
 
+  // False for a feature added at runtime via options.extend (station's
+  // adopt path) - the constructor uses this to skip makeFeature for names
+  // no generated class backs.
+  hasFeature(this: any, fn: string) {
+    return null != FEATURE_CLASS[fn]
+  }
+
 
   main = {
     name: 'Geonode',
+        slug: "geonode",
+    version: "0.0.1",
+    target: "ts",
+
   }
 
 
@@ -56,34 +67,42 @@ class Config {
       "fields": [
         {
           "name": "anonymityLevel",
+          "short": "Level of anonymity provided by the proxy",
           "type": "`$STRING`"
         },
         {
           "name": "country",
+          "short": "Country code where the proxy is located",
           "type": "`$STRING`"
         },
         {
           "name": "ip",
+          "short": "IP address of the proxy server",
           "type": "`$STRING`"
         },
         {
           "name": "lastChecked",
+          "short": "Timestamp of last proxy check",
           "type": "`$STRING`"
         },
         {
           "name": "port",
+          "short": "Port number of the proxy server",
           "type": "`$STRING`"
         },
         {
           "name": "protocols",
+          "short": "Supported protocols",
           "type": "`$ARRAY`"
         },
         {
           "name": "responseTime",
+          "short": "Average response time in milliseconds",
           "type": "`$INTEGER`"
         },
         {
           "name": "upTime",
+          "short": "Uptime percentage",
           "type": "`$NUMBER`"
         }
       ],

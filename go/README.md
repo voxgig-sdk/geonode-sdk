@@ -6,7 +6,7 @@ The Golang SDK for the Geonode API — an entity-oriented client using standard 
 
 It exposes the API as capitalised, semantic **Entities** — e.g. `client.Proxy(nil)` — each with the same small set of operations (`List`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb`, `ts` — see
 > the [top-level README](../README.md).
 
 
@@ -260,14 +260,14 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"anonymityLevel"` |  |
-| `"country"` |  |
-| `"ip"` |  |
-| `"lastChecked"` |  |
-| `"port"` |  |
-| `"protocols"` |  |
-| `"responseTime"` |  |
-| `"upTime"` |  |
+| `"anonymityLevel"` | Level of anonymity provided by the proxy |
+| `"country"` | Country code where the proxy is located |
+| `"ip"` | IP address of the proxy server |
+| `"lastChecked"` | Timestamp of last proxy check |
+| `"port"` | Port number of the proxy server |
+| `"protocols"` | Supported protocols |
+| `"responseTime"` | Average response time in milliseconds |
+| `"upTime"` | Uptime percentage |
 
 Operations: List.
 
@@ -292,14 +292,14 @@ Create an instance: `proxy := client.Proxy(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `anonymityLevel` | `string` |  |
-| `country` | `string` |  |
-| `ip` | `string` |  |
-| `lastChecked` | `string` |  |
-| `port` | `string` |  |
-| `protocols` | `[]any` |  |
-| `responseTime` | `int` |  |
-| `upTime` | `float64` |  |
+| `anonymityLevel` | `string` | Level of anonymity provided by the proxy |
+| `country` | `string` | Country code where the proxy is located |
+| `ip` | `string` | IP address of the proxy server |
+| `lastChecked` | `string` | Timestamp of last proxy check |
+| `port` | `string` | Port number of the proxy server |
+| `protocols` | `[]any` | Supported protocols |
+| `responseTime` | `int` | Average response time in milliseconds |
+| `upTime` | `float64` | Uptime percentage |
 
 #### Example: List
 

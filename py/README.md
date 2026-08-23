@@ -243,14 +243,14 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `anonymityLevel` |  |
-| `country` |  |
-| `ip` |  |
-| `lastChecked` |  |
-| `port` |  |
-| `protocols` |  |
-| `responseTime` |  |
-| `upTime` |  |
+| `anonymityLevel` | Level of anonymity provided by the proxy |
+| `country` | Country code where the proxy is located |
+| `ip` | IP address of the proxy server |
+| `lastChecked` | Timestamp of last proxy check |
+| `port` | Port number of the proxy server |
+| `protocols` | Supported protocols |
+| `responseTime` | Average response time in milliseconds |
+| `upTime` | Uptime percentage |
 
 Operations: List.
 
@@ -275,14 +275,14 @@ Create an instance: `proxy = client.Proxy()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `anonymityLevel` | `str` |  |
-| `country` | `str` |  |
-| `ip` | `str` |  |
-| `lastChecked` | `str` |  |
-| `port` | `str` |  |
-| `protocols` | `list` |  |
-| `responseTime` | `int` |  |
-| `upTime` | `float` |  |
+| `anonymityLevel` | `str` | Level of anonymity provided by the proxy |
+| `country` | `str` | Country code where the proxy is located |
+| `ip` | `str` | IP address of the proxy server |
+| `lastChecked` | `str` | Timestamp of last proxy check |
+| `port` | `str` | Port number of the proxy server |
+| `protocols` | `list` | Supported protocols |
+| `responseTime` | `int` | Average response time in milliseconds |
+| `upTime` | `float` | Uptime percentage |
 
 #### Example: List
 

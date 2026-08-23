@@ -98,14 +98,14 @@ fmt.Println(proxy.GetName()) // "proxy"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `anonymityLevel` | `string` | No |  |
-| `country` | `string` | No |  |
-| `ip` | `string` | No |  |
-| `lastChecked` | `string` | No |  |
-| `port` | `string` | No |  |
-| `protocols` | `[]any` | No |  |
-| `responseTime` | `int` | No |  |
-| `upTime` | `float64` | No |  |
+| `anonymityLevel` | `string` | No | Level of anonymity provided by the proxy |
+| `country` | `string` | No | Country code where the proxy is located |
+| `ip` | `string` | No | IP address of the proxy server |
+| `lastChecked` | `string` | No | Timestamp of last proxy check |
+| `port` | `string` | No | Port number of the proxy server |
+| `protocols` | `[]any` | No | Supported protocols |
+| `responseTime` | `int` | No | Average response time in milliseconds |
+| `upTime` | `float64` | No | Uptime percentage |
 
 ### Operations
 

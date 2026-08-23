@@ -247,14 +247,14 @@ On error, `ok` is `false` and `$err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `anonymityLevel` |  |
-| `country` |  |
-| `ip` |  |
-| `lastChecked` |  |
-| `port` |  |
-| `protocols` |  |
-| `responseTime` |  |
-| `upTime` |  |
+| `anonymityLevel` | Level of anonymity provided by the proxy |
+| `country` | Country code where the proxy is located |
+| `ip` | IP address of the proxy server |
+| `lastChecked` | Timestamp of last proxy check |
+| `port` | Port number of the proxy server |
+| `protocols` | Supported protocols |
+| `responseTime` | Average response time in milliseconds |
+| `upTime` | Uptime percentage |
 
 Operations: List.
 
@@ -279,14 +279,14 @@ Create an instance: `$proxy = $client->Proxy();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `anonymityLevel` | `string` |  |
-| `country` | `string` |  |
-| `ip` | `string` |  |
-| `lastChecked` | `string` |  |
-| `port` | `string` |  |
-| `protocols` | `array` |  |
-| `responseTime` | `int` |  |
-| `upTime` | `float` |  |
+| `anonymityLevel` | `string` | Level of anonymity provided by the proxy |
+| `country` | `string` | Country code where the proxy is located |
+| `ip` | `string` | IP address of the proxy server |
+| `lastChecked` | `string` | Timestamp of last proxy check |
+| `port` | `string` | Port number of the proxy server |
+| `protocols` | `array` | Supported protocols |
+| `responseTime` | `int` | Average response time in milliseconds |
+| `upTime` | `float` | Uptime percentage |
 
 #### Example: List
 
