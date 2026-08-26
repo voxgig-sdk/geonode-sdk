@@ -28,6 +28,7 @@ module GeonodeConfig
           "options" => {
             "active" => false,
           },
+          "transport" => "base",
         },
       },
       "options" => {
