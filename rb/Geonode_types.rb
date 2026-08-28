@@ -47,38 +47,14 @@ Proxy = Struct.new(
 
 # Request payload for Proxy#list.
 #
-# @!attribute [rw] anonymityLevel
-#   @return [String, nil]
-#
-# @!attribute [rw] country
-#   @return [String, nil]
-#
-# @!attribute [rw] ip
-#   @return [String, nil]
-#
-# @!attribute [rw] lastChecked
-#   @return [String, nil]
-#
-# @!attribute [rw] port
-#   @return [String, nil]
-#
-# @!attribute [rw] protocols
-#   @return [Array, nil]
-#
-# @!attribute [rw] responseTime
+# @!attribute [rw] limit
 #   @return [Integer, nil]
 #
-# @!attribute [rw] upTime
-#   @return [Float, nil]
+# @!attribute [rw] page
+#   @return [Integer, nil]
 ProxyListMatch = Struct.new(
-  :anonymityLevel,
-  :country,
-  :ip,
-  :lastChecked,
-  :port,
-  :protocols,
-  :responseTime,
-  :upTime,
+  :limit,
+  :page,
   keyword_init: true
 )
 

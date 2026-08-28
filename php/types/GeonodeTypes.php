@@ -28,13 +28,7 @@ class Proxy
 /** Request payload for Proxy#list. */
 class ProxyListMatch
 {
-    public ?string $anonymityLevel = null;
-    public ?string $country = null;
-    public ?string $ip = null;
-    public ?string $lastChecked = null;
-    public ?string $port = null;
-    public ?array $protocols = null;
-    public ?int $responseTime = null;
-    public ?float $upTime = null;
+    public ?int $limit = null;
+    public ?int $page = null;
 }
 

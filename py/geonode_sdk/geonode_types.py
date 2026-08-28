@@ -28,11 +28,5 @@ class Proxy(TypedDict, total=False):
 
 
 class ProxyListMatch(TypedDict, total=False):
-    anonymityLevel: str
-    country: str
-    ip: str
-    lastChecked: str
-    port: str
-    protocols: list
-    responseTime: int
-    upTime: float
+    limit: int
+    page: int

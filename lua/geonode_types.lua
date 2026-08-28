@@ -17,14 +17,8 @@
 ---@field upTime? number
 
 ---@class ProxyListMatch
----@field anonymityLevel? string
----@field country? string
----@field ip? string
----@field lastChecked? string
----@field port? string
----@field protocols? table
----@field responseTime? number
----@field upTime? number
+---@field limit? number
+---@field page? number
 
 local M = {}
 

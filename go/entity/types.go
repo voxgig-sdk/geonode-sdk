@@ -26,14 +26,8 @@ type Proxy struct {
 
 // ProxyListMatch is the typed request payload for Proxy.ListTyped.
 type ProxyListMatch struct {
-	AnonymityLevel *string `json:"anonymityLevel,omitempty"`
-	Country *string `json:"country,omitempty"`
-	Ip *string `json:"ip,omitempty"`
-	LastChecked *string `json:"lastChecked,omitempty"`
-	Port *string `json:"port,omitempty"`
-	Protocols *[]any `json:"protocols,omitempty"`
-	ResponseTime *int `json:"responseTime,omitempty"`
-	UpTime *float64 `json:"upTime,omitempty"`
+	Limit *int `json:"limit,omitempty"`
+	Page *int `json:"page,omitempty"`
 }
 
 // asMap turns a typed request/data struct into the map[string]any the
