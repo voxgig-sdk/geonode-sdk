@@ -59,6 +59,7 @@ module GeonodeConfig
               "type" => "`$STRING`",
             },
             {
+              "format" => "date-time",
               "name" => "lastChecked",
               "short" => "Timestamp of last proxy check",
               "type" => "`$STRING`",
@@ -112,8 +113,10 @@ module GeonodeConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/proxy-list",
-                  "parts" => [
-                    "proxy-list",
+                  "segments" => [
+                    {
+                      "lit" => "proxy-list",
+                    },
                   ],
                   "select" => {
                     "exist" => [
@@ -125,6 +128,9 @@ module GeonodeConfig
                     "req" => "`reqdata`",
                     "res" => "`body.data`",
                   },
+                  "parts" => [
+                    "proxy-list",
+                  ],
                 },
               ],
             },

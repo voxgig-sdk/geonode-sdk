@@ -73,6 +73,7 @@ class GeonodeConfig
               'type' => '`$STRING`',
             ],
             [
+              'format' => 'date-time',
               'name' => 'lastChecked',
               'short' => 'Timestamp of last proxy check',
               'type' => '`$STRING`',
@@ -126,8 +127,10 @@ class GeonodeConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/proxy-list',
-                  'parts' => [
-                    'proxy-list',
+                  'segments' => [
+                    [
+                      'lit' => 'proxy-list',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -138,6 +141,9 @@ class GeonodeConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body.data`',
+                  ],
+                  'parts' => [
+                    'proxy-list',
                   ],
                 ],
               ],

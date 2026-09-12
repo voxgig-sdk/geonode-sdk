@@ -47,6 +47,7 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "date-time",
             ["name"] = "lastChecked",
             ["short"] = "Timestamp of last proxy check",
             ["type"] = "`$STRING`",
@@ -100,8 +101,10 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/proxy-list",
-                ["parts"] = {
-                  "proxy-list",
+                ["segments"] = {
+                  {
+                    ["lit"] = "proxy-list",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -112,6 +115,9 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body.data`",
+                },
+                ["parts"] = {
+                  "proxy-list",
                 },
               },
             },

@@ -24,6 +24,7 @@ main: kit: entity: proxy: {
       type: "`$STRING`"
     }
     {
+      format: "date-time"
       name: "lastChecked"
       req: false
       short: "Timestamp of last proxy check"
@@ -83,8 +84,10 @@ main: kit: entity: proxy: {
           }
           method: "GET"
           orig: "/proxy-list"
-          parts: [
-            "proxy-list"
+          segments: [
+            {
+              lit: "proxy-list"
+            }
           ]
           select: {
             exist: [
