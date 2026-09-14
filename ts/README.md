@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { GeonodeSDK } from '@voxgig-sdk/geonode'
+import { GeonodeSDK } from '@voxgig-sdk/geonode-sdk'
 
 const client = new GeonodeSDK()
 ```
@@ -417,7 +417,7 @@ geonode/
 Import the SDK from the package root:
 
 ```ts
-import { GeonodeSDK } from '@voxgig-sdk/geonode'
+import { GeonodeSDK } from '@voxgig-sdk/geonode-sdk'
 ```
 
 ### Entity state

@@ -105,7 +105,7 @@ local results, err = client:Proxy():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/geonode` | publish pending — [install from git tag](https://github.com/voxgig-sdk/geonode-sdk/releases) |
+| TypeScript | `@voxgig-sdk/geonode-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/geonode-sdk/releases) |
 | Python | `voxgig-sdk-geonode` | publish pending — [install from git tag](https://github.com/voxgig-sdk/geonode-sdk/releases) |
 | PHP | `voxgig-sdk/geonode` | publish pending — [install from git tag](https://github.com/voxgig-sdk/geonode-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/geonode-sdk/go` | `go get github.com/voxgig-sdk/geonode-sdk/go@latest` |
@@ -119,7 +119,7 @@ local results, err = client:Proxy():list()
 ### TypeScript
 
 ```ts
-import { GeonodeSDK } from '@voxgig-sdk/geonode'
+import { GeonodeSDK } from '@voxgig-sdk/geonode-sdk'
 
 const client = new GeonodeSDK()
 

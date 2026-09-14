@@ -854,7 +854,7 @@
             "registry": {
               "active": false,
               "name": "npm",
-              "package": "",
+              "package": "@voxgig-sdk/geonode-sdk",
               "state": "pending",
               "url": "https://registry.npmjs.org",
               "vault": {
