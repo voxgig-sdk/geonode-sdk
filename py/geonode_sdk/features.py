@@ -1,12 +1,18 @@
 # Geonode SDK feature factory
 
 from geonode_sdk.feature.base_feature import GeonodeBaseFeature
+from geonode_sdk.feature.ratelimit_feature import GeonodeRatelimitFeature
+from geonode_sdk.feature.retry_feature import GeonodeRetryFeature
 from geonode_sdk.feature.test_feature import GeonodeTestFeature
+from geonode_sdk.feature.timeout_feature import GeonodeTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: GeonodeBaseFeature(),
+    "ratelimit": lambda: GeonodeRatelimitFeature(),
+    "retry": lambda: GeonodeRetryFeature(),
     "test": lambda: GeonodeTestFeature(),
+    "timeout": lambda: GeonodeTimeoutFeature(),
 }
 
 

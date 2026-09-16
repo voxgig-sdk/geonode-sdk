@@ -40,6 +40,8 @@ const node_path_1 = __importDefault(require("node:path"));
 const Fs = __importStar(require("node:fs"));
 const node_test_1 = require("node:test");
 const node_assert_1 = __importDefault(require("node:assert"));
+const live_runner_1 = require("../../live-runner");
+const live_entity_1 = require("../../live-entity");
 const __1 = require("../../..");
 const utility_1 = require("../../utility");
 // AFTER the imports on purpose: TypeScript hoists `import` above any
@@ -59,16 +61,12 @@ const utility_1 = require("../../utility");
     (0, node_test_1.test)('basic', async (t) => {
         const live = 'TRUE' === process.env.GEONODE_TEST_LIVE;
         for (const op of ['list']) {
-            if ((0, utility_1.maybeSkipControl)(t, 'entityOp', 'proxy.' + op, live))
+            if (!live && (0, utility_1.maybeSkipControl)(t, 'entityOp', 'proxy.' + op, live))
                 return;
         }
         const setup = basicSetup();
-        // The basic flow consumes synthetic IDs and field values from the
-        // fixture (entity TestData.json). Those don't exist on the live API.
-        // Skip live runs unless the user provided a real ENTID env override.
-        if (setup.syntheticOnly) {
-            t.skip('live entity test uses synthetic IDs from fixture — set GEONODE_TEST_PROXY_ENTID JSON to run live');
-            return;
+        if (setup.live) {
+            return (0, live_entity_1.runLiveEntity)(setup, { "active": true, "alias": { "field": {} }, "fields": [{ "active": true, "name": "anonymityLevel", "req": false, "short": "Level of anonymity provided by the proxy", "type": "`$STRING`", "index$": 0 }, { "active": true, "name": "country", "req": false, "short": "Country code where the proxy is located", "type": "`$STRING`", "index$": 1 }, { "active": true, "name": "ip", "req": false, "short": "IP address of the proxy server", "type": "`$STRING`", "index$": 2 }, { "active": true, "format": "date-time", "name": "lastChecked", "req": false, "short": "Timestamp of last proxy check", "type": "`$STRING`", "index$": 3 }, { "active": true, "name": "port", "req": false, "short": "Port number of the proxy server", "type": "`$STRING`", "index$": 4 }, { "active": true, "name": "protocols", "req": false, "short": "Supported protocols", "type": "`$ARRAY`", "index$": 5 }, { "active": true, "name": "responseTime", "req": false, "short": "Average response time in milliseconds", "type": "`$INTEGER`", "index$": 6 }, { "active": true, "name": "upTime", "req": false, "short": "Uptime percentage", "type": "`$NUMBER`", "index$": 7 }], "name": "proxy", "op": { "list": { "input": "data", "name": "list", "points": [{ "active": true, "args": { "query": [{ "active": true, "example": 100, "kind": "query", "name": "limit", "orig": "limit", "reqd": false, "type": "`$INTEGER`", "index$": 0 }, { "active": true, "example": 1, "kind": "query", "name": "page", "orig": "page", "reqd": false, "type": "`$INTEGER`", "index$": 1 }] }, "contract": { "id": "GET /proxy-list", "json": "{\"operationId\":\"getProxyList\",\"parameters\":[{\"description\":\"The page number for pagination\",\"in\":\"query\",\"name\":\"page\",\"required\":false,\"schema\":{\"default\":1,\"minimum\":1,\"type\":\"integer\"}},{\"description\":\"The number of proxy servers to return per page\",\"in\":\"query\",\"name\":\"limit\",\"required\":false,\"schema\":{\"default\":100,\"maximum\":500,\"minimum\":1,\"type\":\"integer\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"data\":{\"description\":\"Array of proxy server objects\",\"items\":{\"properties\":{\"anonymityLevel\":{\"description\":\"Level of anonymity provided by the proxy\",\"example\":\"elite\",\"type\":\"string\"},\"country\":{\"description\":\"Country code where the proxy is located\",\"example\":\"US\",\"type\":\"string\"},\"ip\":{\"description\":\"IP address of the proxy server\",\"example\":\"192.168.1.1\",\"type\":\"string\"},\"lastChecked\":{\"description\":\"Timestamp of last proxy check\",\"format\":\"date-time\",\"type\":\"string\"},\"port\":{\"description\":\"Port number of the proxy server\",\"example\":\"8080\",\"type\":\"string\"},\"protocols\":{\"description\":\"Supported protocols\",\"items\":{\"example\":\"http\",\"type\":\"string\"},\"type\":\"array\"},\"responseTime\":{\"description\":\"Average response time in milliseconds\",\"example\":150,\"type\":\"integer\"},\"upTime\":{\"description\":\"Uptime percentage\",\"example\":99.5,\"type\":\"number\"}},\"type\":\"object\"},\"type\":\"array\"},\"limit\":{\"description\":\"Number of items per page\",\"type\":\"integer\"},\"page\":{\"description\":\"Current page number\",\"type\":\"integer\"},\"total\":{\"description\":\"Total number of available proxies\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Successful response with proxy list\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Bad request - Invalid parameters\"},\"429\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Too many requests - Rate limit exceeded\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"securitySource\":\"unspecified\"}", "source": "openapi3", "version": 1 }, "kind": "http", "method": "GET", "orig": "/proxy-list", "segments": [{ "lit": "proxy-list" }], "select": { "exist": ["limit", "page"] }, "transform": { "req": "`reqdata`", "res": "`body.data`" }, "index$": 0 }], "key$": "list" } }, "relations": { "ancestors": [] }, "key$": "proxy", "name__orig": "proxy", "Name": "Proxy", "name_": "proxy", "name-": "proxy", "NAME": "PROXY", "index$": 0 }, { "active": true, "entity": "proxy", "key$": "BasicProxyFlow", "kind": "basic", "name": "BasicProxyFlow", "param": {}, "step": [{ "active": true, "data": {}, "input": {}, "match": {}, "op": "list", "spec": [], "valid": [{ "apply": "ItemExists", "def": { "ref": "proxy_ref01" } }], "index$": 0 }] }, 'Proxy');
         }
         const client = setup.client;
         const struct = setup.struct;
@@ -101,12 +99,6 @@ function basicSetup(extra) {
                 '`$VAL`': ['`$FORMAT`', 'upper', '`$COPY`']
             }]
     });
-    // Detect whether the user provided a real ENTID JSON via env var. The
-    // basic flow consumes synthetic IDs from the fixture file; without an
-    // override those synthetic IDs reach the live API and 4xx. Surface this
-    // to the test so it can skip rather than fail.
-    const idmapEnvVal = process.env['GEONODE_TEST_PROXY_ENTID'];
-    const idmapOverridden = null != idmapEnvVal && idmapEnvVal.trim().startsWith('{');
     const env = (0, utility_1.envOverride)({
         'GEONODE_TEST_PROXY_ENTID': idmap,
         'GEONODE_TEST_LIVE': 'FALSE',
@@ -114,7 +106,13 @@ function basicSetup(extra) {
     });
     idmap = env['GEONODE_TEST_PROXY_ENTID'];
     const live = 'TRUE' === env.GEONODE_TEST_LIVE;
+    const transport = (0, live_runner_1.createLiveTransport)();
     if (live) {
+        const rawIds = process.env['GEONODE_TEST_PROXY_ENTID'];
+        idmap = rawIds && rawIds.trim() ? JSON.parse(rawIds) : {};
+        if (!idmap || Array.isArray(idmap) || typeof idmap !== 'object') {
+            throw new Error('Live ENTID must be a JSON object');
+        }
         client = new __1.GeonodeSDK(merge([
             // FIRST, so the generated fields below win: sdk-test-control.json's
             // test.client.options adds to the live client, it does not redirect it.
@@ -125,7 +123,8 @@ function basicSetup(extra) {
             // argument at all - so a bare 'extra' silently discarded the apikey
             // and server values above and handed the SDK undefined. Harmless
             // while there was nothing in that object; not harmless now.
-            extra || {}
+            extra || {},
+            { system: { fetch: transport.fetch } }
         ]));
     }
     const setup = {
@@ -137,7 +136,7 @@ function basicSetup(extra) {
         data: entityData,
         explain: 'TRUE' === env.GEONODE_TEST_EXPLAIN,
         live,
-        syntheticOnly: live && !idmapOverridden,
+        transport,
         now: Date.now(),
     };
     return setup;

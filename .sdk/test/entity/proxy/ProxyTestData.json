@@ -8,7 +8,7 @@
         "lastChecked": "s53",
         "port": "s54",
         "protocols": [],
-        "responseTime": "s56",
+        "responseTime": 86,
         "upTime": 87
       },
       "PROXY01": {
@@ -18,7 +18,7 @@
         "lastChecked": "sa3",
         "port": "sa4",
         "protocols": [],
-        "responseTime": "sa6",
+        "responseTime": 166,
         "upTime": 167
       },
       "PROXY02": {
@@ -28,7 +28,7 @@
         "lastChecked": "sf3",
         "port": "sf4",
         "protocols": [],
-        "responseTime": "sf6",
+        "responseTime": 246,
         "upTime": 247
       }
     }
@@ -42,8 +42,169 @@
         "lastChecked": "s143",
         "port": "s144",
         "protocols": [],
-        "responseTime": "s146",
+        "responseTime": 326,
         "upTime": 327
+      }
+    }
+  },
+  "requests": {
+    "GET /proxy-list": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getProxyList",
+        "parameters": [
+          {
+            "description": "The page number for pagination",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "schema": {
+              "default": 1,
+              "minimum": 1,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "The number of proxy servers to return per page",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 100,
+              "maximum": 500,
+              "minimum": 1,
+              "type": "integer"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "data": {
+                      "description": "Array of proxy server objects",
+                      "items": {
+                        "properties": {
+                          "anonymityLevel": {
+                            "description": "Level of anonymity provided by the proxy",
+                            "example": "elite",
+                            "type": "string"
+                          },
+                          "country": {
+                            "description": "Country code where the proxy is located",
+                            "example": "US",
+                            "type": "string"
+                          },
+                          "ip": {
+                            "description": "IP address of the proxy server",
+                            "example": "192.168.1.1",
+                            "type": "string"
+                          },
+                          "lastChecked": {
+                            "description": "Timestamp of last proxy check",
+                            "format": "date-time",
+                            "type": "string"
+                          },
+                          "port": {
+                            "description": "Port number of the proxy server",
+                            "example": "8080",
+                            "type": "string"
+                          },
+                          "protocols": {
+                            "description": "Supported protocols",
+                            "items": {
+                              "example": "http",
+                              "type": "string"
+                            },
+                            "type": "array"
+                          },
+                          "responseTime": {
+                            "description": "Average response time in milliseconds",
+                            "example": 150,
+                            "type": "integer"
+                          },
+                          "upTime": {
+                            "description": "Uptime percentage",
+                            "example": 99.5,
+                            "type": "number"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "limit": {
+                      "description": "Number of items per page",
+                      "type": "integer"
+                    },
+                    "page": {
+                      "description": "Current page number",
+                      "type": "integer"
+                    },
+                    "total": {
+                      "description": "Total number of available proxies",
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response with proxy list"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "error": {
+                      "description": "Error message",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Bad request - Invalid parameters"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "error": {
+                      "description": "Error message",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Too many requests - Rate limit exceeded"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "error": {
+                      "description": "Error message",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "securitySource": "unspecified"
       }
     }
   }
