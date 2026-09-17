@@ -105,12 +105,12 @@ local results, err = client:Proxy():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/geonode-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/geonode-sdk/releases) |
-| Python | `voxgig-sdk-geonode` | publish pending — [install from git tag](https://github.com/voxgig-sdk/geonode-sdk/releases) |
-| PHP | `voxgig-sdk/geonode` | publish pending — [install from git tag](https://github.com/voxgig-sdk/geonode-sdk/releases) |
+| TypeScript | `@voxgig-sdk/geonode-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/geonode-sdk/tags) |
+| Python | `voxgig-sdk-geonode` | publish pending — [install from git tag](https://github.com/voxgig-sdk/geonode-sdk/tags) |
+| PHP | `voxgig-sdk/geonode` | publish pending — [install from git tag](https://github.com/voxgig-sdk/geonode-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/geonode-sdk/go` | `go get github.com/voxgig-sdk/geonode-sdk/go@latest` |
-| Ruby | `voxgig-sdk-geonode` | publish pending — [install from git tag](https://github.com/voxgig-sdk/geonode-sdk/releases) |
-| Lua | `voxgig-sdk-geonode` | publish pending — [install from git tag](https://github.com/voxgig-sdk/geonode-sdk/releases) |
+| Ruby | `voxgig-sdk-geonode` | publish pending — [install from git tag](https://github.com/voxgig-sdk/geonode-sdk/tags) |
+| Lua | `voxgig-sdk-geonode` | publish pending — [install from git tag](https://github.com/voxgig-sdk/geonode-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/geonode-sdk/go-cli` | `go install github.com/voxgig-sdk/geonode-sdk/go-cli/cmd/geonode@latest` |
 | Go MCP server | `github.com/voxgig-sdk/geonode-sdk/go-mcp` | `go get github.com/voxgig-sdk/geonode-sdk/go-mcp@latest` |
 
