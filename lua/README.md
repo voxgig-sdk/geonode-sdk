@@ -43,7 +43,7 @@ local proxys, err = client:Proxy():list()
 if err then error(err) end
 
 for _, item in ipairs(proxys) do
-  print(item["anonymityLevel"])
+  print(item)
 end
 ```
 

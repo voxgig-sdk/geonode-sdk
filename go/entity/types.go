@@ -1,7 +1,7 @@
 // Typed models for the Geonode SDK.
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-// params (op.<name>.points[].args.params[]). Field/param types come from the
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+// params (op.<name>.points[].g.params[]). Field/param types come from the
 // canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 package entity
@@ -14,14 +14,6 @@ import (
 
 // Proxy is the typed data model for the proxy entity.
 type Proxy struct {
-	AnonymityLevel *string `json:"anonymityLevel,omitempty"`
-	Country *string `json:"country,omitempty"`
-	Ip *string `json:"ip,omitempty"`
-	LastChecked *string `json:"lastChecked,omitempty"`
-	Port *string `json:"port,omitempty"`
-	Protocols *[]any `json:"protocols,omitempty"`
-	ResponseTime *int `json:"responseTime,omitempty"`
-	UpTime *float64 `json:"upTime,omitempty"`
 }
 
 // ProxyListMatch is the typed request payload for Proxy.ListTyped.

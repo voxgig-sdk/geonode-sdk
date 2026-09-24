@@ -11,19 +11,12 @@ const FEATURE_CLASS = {
     test: TestFeature_1.TestFeature,
     timeout: TimeoutFeature_1.TimeoutFeature,
 };
-// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
-// the model's active plugin groups. A feature that takes a `plugins` option
-// (secrets over sekreto) reads its own entry; a feature with no plugins has
-// none. Named imports above make each definition statically reachable, so
-// an SDK carries exactly the plugin modules its model selects — the same
-// leanness the old side-effect registry imports bought, without a registry.
 const FEATURE_PLUGINS = {};
 exports.FEATURE_PLUGINS = FEATURE_PLUGINS;
 class Config {
     makeFeature(fn) {
         const fc = FEATURE_CLASS[fn];
         const fi = new fc();
-        // TODO: errors etc
         return fi;
     }
     // False for a feature added at runtime via options.extend (station's
@@ -114,44 +107,52 @@ class Config {
             "fields": [
                 {
                     "name": "anonymityLevel",
-                    "short": "Level of anonymity provided by the proxy",
-                    "type": "`$STRING`"
+                    "title": "Anonymity Level",
+                    "type": "`$STRING`",
+                    "short": "Level of anonymity provided by the proxy"
                 },
                 {
                     "name": "country",
-                    "short": "Country code where the proxy is located",
-                    "type": "`$STRING`"
+                    "title": "Country",
+                    "type": "`$STRING`",
+                    "short": "Country code where the proxy is located"
                 },
                 {
                     "name": "ip",
-                    "short": "IP address of the proxy server",
-                    "type": "`$STRING`"
+                    "title": "Ip",
+                    "type": "`$STRING`",
+                    "short": "IP address of the proxy server"
                 },
                 {
-                    "format": "date-time",
                     "name": "lastChecked",
+                    "title": "Last Checked",
+                    "type": "`$STRING`",
                     "short": "Timestamp of last proxy check",
-                    "type": "`$STRING`"
+                    "format": "date-time"
                 },
                 {
                     "name": "port",
-                    "short": "Port number of the proxy server",
-                    "type": "`$STRING`"
+                    "title": "Port",
+                    "type": "`$STRING`",
+                    "short": "Port number of the proxy server"
                 },
                 {
                     "name": "protocols",
-                    "short": "Supported protocols",
-                    "type": "`$ARRAY`"
+                    "title": "Protocols",
+                    "type": "`$ARRAY`",
+                    "short": "Supported protocols"
                 },
                 {
                     "name": "responseTime",
-                    "short": "Average response time in milliseconds",
-                    "type": "`$INTEGER`"
+                    "title": "Response Time",
+                    "type": "`$INTEGER`",
+                    "short": "Average response time in milliseconds"
                 },
                 {
                     "name": "upTime",
-                    "short": "Uptime percentage",
-                    "type": "`$NUMBER`"
+                    "title": "Up Time",
+                    "type": "`$NUMBER`",
+                    "short": "Uptime percentage"
                 }
             ],
             "name": "proxy",
@@ -161,24 +162,6 @@ class Config {
                     "name": "list",
                     "points": [
                         {
-                            "args": {
-                                "query": [
-                                    {
-                                        "example": 100,
-                                        "kind": "query",
-                                        "name": "limit",
-                                        "orig": "limit",
-                                        "type": "`$INTEGER`"
-                                    },
-                                    {
-                                        "example": 1,
-                                        "kind": "query",
-                                        "name": "page",
-                                        "orig": "page",
-                                        "type": "`$INTEGER`"
-                                    }
-                                ]
-                            },
                             "kind": "http",
                             "method": "GET",
                             "orig": "/proxy-list",
@@ -187,19 +170,38 @@ class Config {
                                     "lit": "proxy-list"
                                 }
                             ],
+                            "parts": [
+                                "proxy-list"
+                            ],
+                            "rename": {},
+                            "transform": {
+                                "req": "`reqdata`",
+                                "res": "`body.data`"
+                            },
+                            "args": {
+                                "query": [
+                                    {
+                                        "name": "limit",
+                                        "orig": "limit",
+                                        "type": "`$INTEGER`",
+                                        "kind": "query",
+                                        "example": 100
+                                    },
+                                    {
+                                        "name": "page",
+                                        "orig": "page",
+                                        "type": "`$INTEGER`",
+                                        "kind": "query",
+                                        "example": 1
+                                    }
+                                ]
+                            },
                             "select": {
                                 "exist": [
                                     "limit",
                                     "page"
                                 ]
-                            },
-                            "transform": {
-                                "req": "`reqdata`",
-                                "res": "`body.data`"
-                            },
-                            "parts": [
-                                "proxy-list"
-                            ]
+                            }
                         }
                     ]
                 }

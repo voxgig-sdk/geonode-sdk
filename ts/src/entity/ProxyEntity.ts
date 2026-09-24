@@ -19,7 +19,6 @@ import type {
   ProxyListMatch,
 } from '../GeonodeTypes'
 
-// TODO: needs Entity superclass
 class ProxyEntity extends GeonodeEntityBase<ProxyType> {
 
   constructor(client: GeonodeSDK, entopts: any) {

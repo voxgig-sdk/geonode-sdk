@@ -1,0 +1,122 @@
+# Entity: proxy
+
+main: kit: entity: proxy: {
+
+  alias: field: {}
+
+  fields: {
+    anonymityLevel: {
+      h: "Anonymity Level"
+      n: "anonymityLevel"
+      r: false
+      sh: "Level of anonymity provided by the proxy"
+      t: "`$STRING`"
+    }
+    country: {
+      h: "Country"
+      n: "country"
+      r: false
+      sh: "Country code where the proxy is located"
+      t: "`$STRING`"
+    }
+    ip: {
+      h: "Ip"
+      n: "ip"
+      r: false
+      sh: "IP address of the proxy server"
+      t: "`$STRING`"
+    }
+    lastChecked: {
+      fo: "date-time"
+      h: "Last Checked"
+      n: "lastChecked"
+      r: false
+      sh: "Timestamp of last proxy check"
+      t: "`$STRING`"
+    }
+    port: {
+      h: "Port"
+      n: "port"
+      r: false
+      sh: "Port number of the proxy server"
+      t: "`$STRING`"
+    }
+    protocols: {
+      h: "Protocols"
+      n: "protocols"
+      r: false
+      sh: "Supported protocols"
+      t: "`$ARRAY`"
+    }
+    responseTime: {
+      h: "Response Time"
+      n: "responseTime"
+      r: false
+      sh: "Average response time in milliseconds"
+      t: "`$INTEGER`"
+    }
+    upTime: {
+      h: "Up Time"
+      n: "upTime"
+      r: false
+      sh: "Uptime percentage"
+      t: "`$NUMBER`"
+    }
+  }
+
+  name: "proxy"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /proxy-list"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: 100
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: 1
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/proxy-list"
+          q: {
+            exist: [
+              "limit"
+              "page"
+            ]
+          }
+          s: [
+            {
+              lit: "proxy-list"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -91,44 +91,52 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "anonymityLevel",
-						"short": "Level of anonymity provided by the proxy",
+						"title": "Anonymity Level",
 						"type": "`$STRING`",
+						"short": "Level of anonymity provided by the proxy",
 					},
 					map[string]any{
 						"name": "country",
-						"short": "Country code where the proxy is located",
+						"title": "Country",
 						"type": "`$STRING`",
+						"short": "Country code where the proxy is located",
 					},
 					map[string]any{
 						"name": "ip",
-						"short": "IP address of the proxy server",
+						"title": "Ip",
 						"type": "`$STRING`",
+						"short": "IP address of the proxy server",
 					},
 					map[string]any{
-						"format": "date-time",
 						"name": "lastChecked",
-						"short": "Timestamp of last proxy check",
+						"title": "Last Checked",
 						"type": "`$STRING`",
+						"short": "Timestamp of last proxy check",
+						"format": "date-time",
 					},
 					map[string]any{
 						"name": "port",
-						"short": "Port number of the proxy server",
+						"title": "Port",
 						"type": "`$STRING`",
+						"short": "Port number of the proxy server",
 					},
 					map[string]any{
 						"name": "protocols",
-						"short": "Supported protocols",
+						"title": "Protocols",
 						"type": "`$ARRAY`",
+						"short": "Supported protocols",
 					},
 					map[string]any{
 						"name": "responseTime",
-						"short": "Average response time in milliseconds",
+						"title": "Response Time",
 						"type": "`$INTEGER`",
+						"short": "Average response time in milliseconds",
 					},
 					map[string]any{
 						"name": "upTime",
-						"short": "Uptime percentage",
+						"title": "Up Time",
 						"type": "`$NUMBER`",
+						"short": "Uptime percentage",
 					},
 				},
 				"name": "proxy",
@@ -138,24 +146,6 @@ func MakeConfig() map[string]any {
 						"name": "list",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"example": 100,
-											"kind": "query",
-											"name": "limit",
-											"orig": "limit",
-											"type": "`$INTEGER`",
-										},
-										map[string]any{
-											"example": 1,
-											"kind": "query",
-											"name": "page",
-											"orig": "page",
-											"type": "`$INTEGER`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/proxy-list",
@@ -164,18 +154,37 @@ func MakeConfig() map[string]any {
 										"lit": "proxy-list",
 									},
 								},
+								"parts": []any{
+									"proxy-list",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body.data`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "limit",
+											"orig": "limit",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 100,
+										},
+										map[string]any{
+											"name": "page",
+											"orig": "page",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 1,
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"limit",
 										"page",
 									},
-								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body.data`",
-								},
-								"parts": []any{
-									"proxy-list",
 								},
 							},
 						},

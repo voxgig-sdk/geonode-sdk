@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProxyEntity = void 0;
 const GeonodeEntityBase_1 = require("../GeonodeEntityBase");
-// TODO: needs Entity superclass
 class ProxyEntity extends GeonodeEntityBase_1.GeonodeEntityBase {
     constructor(client, entopts) {
         super(client, entopts);
